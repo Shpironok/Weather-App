@@ -3,6 +3,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="css/user.css">
+	<title>Погода</title>
 </head>
 <body>
 	<div class="container">
@@ -10,7 +11,7 @@
 				<div ng-app="myapp" ng-controller="WeatherCtrl">
 					<div class="row">
 						<div class="col-sm-4 col-sm-offset-4">
-							<h3>Введите город:</h3>
+							<h3>Выберите город:</h3>
 							<input type="text" class="form-control" ng-change="cities()" ng-model="city" id="city" list="cities_list" placeholder='Например "Москва"'>
 							<datalist id="cities_list">
 								<cities-title ng-repeat="citytitle in citytitle.title" citytitle="citytitle"></cities-title>
