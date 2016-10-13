@@ -1,6 +1,8 @@
+// контроллер для приложения
+
 myapp.controller('WeatherCtrl', function ($scope, weatherService, citiesService) {
-    $scope.weather = weatherService.getWeather();
-    $scope.load = function (){
+    $scope.weather = weatherService.getWeather(); // Выводим погоду для города Санкт-Петербург по умолчанию
+    $scope.load = function (){ //обрабатываем клик по кнопке "Показать"
 
         if ($('#city').val() == "") {
             $('#city').css({'border-color' : 'red'});
@@ -10,7 +12,7 @@ myapp.controller('WeatherCtrl', function ($scope, weatherService, citiesService)
         }
     }
 
-    $scope.cities = function (){ 
+    $scope.cities = function (){ // Обрабатываем изменение текстового поля
         if ($('#city').val().length > 3 ) {
         	$scope.citytitle = citiesService.getCities();
         }
