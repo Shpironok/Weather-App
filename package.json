@@ -1,17 +1,33 @@
 {
-  "name": "node-angular-weather-app",
-  "description": "Widget weather",
-  "version": "0.0.1",
-  "author": {
-    "name": "Shpironok Artem",
-    "email": "info@shpironok.ru"
-  },
+  "name": "webpack-angular",
+  "version": "1.0.0",
+  "description": "Example of using webpack with an angular project for an loftblog lesson",
+  "main": "app/index.js",
+  "repository": "https://github.com/Severenit/angular-webpack.git",
   "scripts": {
-    "start": "node scripts/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/.bin/webpack-dev-server --content-base app",
+    "build": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html"
   },
+  "keywords": [
+    "webpack",
+    "angular",
+    "loftblog"
+  ],
+  "author": "Zar Zakharov",
+  "license": "MIT",
   "devDependencies": {
-  	"angular": "1.1.4",
-    "angular-resource": "^1.6.1",
-  	"webpack": "^1.14.0"
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.19.0",
+    "node-sass": "^3.3.3",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^2.0.1",
+    "style-loader": "^0.12.4",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.11.0"
+  },
+  "dependencies": {
+    "angular": "1.1.4"
   }
 }
