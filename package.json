@@ -1,0 +1,17 @@
+{
+  "name": "node-angular-weather-app",
+  "description": "Widget weather",
+  "version": "0.0.1",
+  "author": {
+    "name": "Shpironok Artem",
+    "email": "info@shpironok.ru"
+  },
+  "scripts": {
+    "start": "node scripts/server.js"
+  },
+  "devDependencies": {
+  	"angular": "1.1.4",
+    "angular-resource": "^1.6.1",
+  	"webpack": "^1.14.0"
+  }
+}
