@@ -1,20 +1,17 @@
 {
-  "name": "webpack-angular",
+  "name": "angular-weather-app-shpironok",
   "version": "1.0.0",
-  "description": "Example of using webpack with an angular project for an loftblog lesson",
+  "description": "Weather app",
   "main": "app/index.js",
-  "repository": "https://github.com/Severenit/angular-webpack.git",
+  "repository": "https://github.com/Shpironok/Weather-App",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node node_modules/.bin/webpack-dev-server --content-base app",
-    "build": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html"
+    "start": "node node_modules/.bin/webpack-dev-server --content-base app"
   },
   "keywords": [
     "webpack",
-    "angular",
-    "loftblog"
+    "angular"
   ],
-  "author": "Zar Zakharov",
+  "author": "Artem Shpironok",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^5.8.25",
