@@ -1,1 +1,1 @@
-web: node node_modules/.bin/webpack-dev-server --content-base app --port 5000
+web: npm start
