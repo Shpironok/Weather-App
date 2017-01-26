@@ -14,3 +14,9 @@ https://vk.com
 Список городов - api.vk.com
 
 Погода - api.openweathermap.org
+
+$ npm i 
+
+$ webpack
+
+$ npm start
