@@ -11,7 +11,8 @@
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-4">
 					<h3>Выберите город:</h3>
-					<input type="text" class="form-control" ng-change="cities()" ng-model="city" id="city" list="cities_list" placeholder='Например "Москва"'>
+					<input type="text" class="form-control" ng-change="cities()" ng-model="city" id="city" list="cities_list" placeholder='Например "Москва"' ng-style="bcolor">
+					<button ng-click="bcolor={'border-color':'red'}"></button>
 					<datalist id="cities_list">
 						<cities-title ng-repeat="citytitle in citytitle.title" citytitle="citytitle"></cities-title>
 					</datalist>

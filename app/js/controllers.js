@@ -18,8 +18,10 @@ myapp.controller('WeatherCtrl', function ($scope, weatherService, citiesService)
     $scope.load = function (){ //обрабатываем клик по кнопке "Показать"
 
         if (!$scope.city) {
+          $scope.bcolor = {'border-color':'red'};
         } else {
         	$scope.weather = weatherService.getWeather($scope.city, $scope.cnt);
+          $scope.bcolor = {'border-color':'#cccccc'};
         }
     }
 
