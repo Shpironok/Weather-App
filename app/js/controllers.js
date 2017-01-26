@@ -3,7 +3,7 @@ export default myapp => {
 // контроллер для приложения
 
 myapp.controller('WeatherCtrl', function ($scope, weatherService, citiesService) {
-    $scope.weather = weatherService.getWeather('Самара', $scope.cnt); // Выводим погоду для города по умолчанию
+    $scope.weather = weatherService.getWeather('Самара', '6'); // Выводим погоду для города по умолчанию
     $scope.countdays = [
       {count:'1'},
       {count:'2'},
