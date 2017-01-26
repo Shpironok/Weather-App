@@ -5,7 +5,7 @@
   "main": "app/index.html",
   "repository": "https://github.com/Shpironok/Weather-App",
   "scripts": {
-    "start": "node node_modules/.bin/webpack-dev-server --content-base app --port process.env.PORT"
+    "start": "node node_modules/.bin/webpack-dev-server --content-base app"
   },
   "keywords": [
     "webpack",
