@@ -5,7 +5,7 @@
   "main": "app/index.html",
   "repository": "https://github.com/Shpironok/Weather-App",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack.config.js --progress --colors",
     "start": "node scripts/server.js"
   },
   "keywords": [
