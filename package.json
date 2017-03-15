@@ -6,7 +6,7 @@
   "repository": "https://github.com/Shpironok/Weather-App",
   "scripts": {
     "start": "node scripts/server.js",
-    "postinstall": "NODE_ENV=production webpack -p"
+    "postinstall": "webpack"
   },
   "keywords": [
     "webpack",
