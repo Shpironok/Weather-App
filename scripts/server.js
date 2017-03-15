@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+#!/usr/bin/env node
+
 var util = require('util'),
     http = require('http'),
     fs = require('fs'),
@@ -41,7 +43,7 @@ function HttpServer(handlers) {
 HttpServer.prototype.start = function(port) {
   this.port = port;
   this.server.listen(process.env.PORT || 5000);
-  console.log('Http Server running at http://localhost:' + port + '/');
+  console.log('Http Server running at http://localhost:5000/');
 };
 
 HttpServer.prototype.parseUrl_ = function(urlString) {
@@ -55,8 +57,15 @@ HttpServer.prototype.handleRequest_ = function(req, res) {
   if (req.headers['user-agent']) {
     logEntry += ' ' + req.headers['user-agent'];
   }
-  console.log(logEntry);
+  //console.log(logEntry);
   req.url = this.parseUrl_(req.url);
+  if (req.url.href == '/' || req.url.href == '/app/') {
+    res.writeHead(301, {
+      'Content-Type': 'text/html',
+      'Location': '/app/index.html'
+  });
+  res.end();
+  }
   var handler = this.handlers[req.method];
   if (!handler) {
     res.writeHead(501);
@@ -110,8 +119,8 @@ StaticServlet.prototype.sendError_ = function(req, res, error) {
   res.write('<title>Internal Server Error</title>\n');
   res.write('<h1>Internal Server Error</h1>');
   res.write('<pre>' + escapeHtml(util.inspect(error)) + '</pre>');
-  console.log('500 Internal Server Error');
-  console.log(util.inspect(error));
+  //console.log('500 Internal Server Error');
+  //console.log(util.inspect(error));
 };
 
 StaticServlet.prototype.sendMissing_ = function(req, res, path) {
@@ -128,7 +137,7 @@ StaticServlet.prototype.sendMissing_ = function(req, res, path) {
     ' was not found on this server.</p>'
   );
   res.end();
-  console.log('404 Not Found: ' + path);
+  //console.log('404 Not Found: ' + path);
 };
 
 StaticServlet.prototype.sendForbidden_ = function(req, res, path) {
@@ -144,7 +153,7 @@ StaticServlet.prototype.sendForbidden_ = function(req, res, path) {
     escapeHtml(path) + ' on this server.</p>'
   );
   res.end();
-  console.log('403 Forbidden: ' + path);
+  //console.log('403 Forbidden: ' + path);
 };
 
 StaticServlet.prototype.sendRedirect_ = function(req, res, redirectUrl) {
@@ -161,7 +170,7 @@ StaticServlet.prototype.sendRedirect_ = function(req, res, redirectUrl) {
     '">here</a>.</p>'
   );
   res.end();
-  console.log('301 Moved Permanently: ' + redirectUrl);
+  //console.log('301 Moved Permanently: ' + redirectUrl);
 };
 
 StaticServlet.prototype.sendFile_ = function(req, res, path) {
@@ -206,8 +215,8 @@ StaticServlet.prototype.sendDirectory_ = function(req, res, path) {
         if (stat.isDirectory()) {
           files[index] = fileName + '/';
         }
-        if (!(--remaining))
-          return self.writeDirectoryIndex_(req, res, path, files);
+        //if (!(--remaining))
+          //return self.writeDirectoryIndex_(req, res, path, files);
       });
     });
   });
